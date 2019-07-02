@@ -53,6 +53,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="GAme.cs" />
+    <Compile Include="hammer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="thor.cs" />
@@ -87,6 +88,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\thor2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thor_left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thor_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thor_hammer.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

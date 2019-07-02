@@ -63,9 +63,9 @@ namespace baloon_invaders.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap lthor {
+        internal static System.Drawing.Bitmap thor_hammer {
             get {
-                object obj = ResourceManager.GetObject("lthor", resourceCulture);
+                object obj = ResourceManager.GetObject("thor_hammer", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,19 @@ namespace baloon_invaders.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap rthor {
+        internal static System.Drawing.Bitmap thor_left {
             get {
-                object obj = ResourceManager.GetObject("rthor", resourceCulture);
+                object obj = ResourceManager.GetObject("thor_left", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap thor_right {
+            get {
+                object obj = ResourceManager.GetObject("thor_right", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

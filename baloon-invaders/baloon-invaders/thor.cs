@@ -25,8 +25,8 @@ namespace baloon_invaders
 
         public thor(int heught, int witdh)
         {
-            center = new Point((witdh / 2)-50, heught-50);
-            img = Resources.rthor;
+            center = new Point((witdh / 2)-80, heught-170);
+            img = Resources.thor_right;
             //limg = Resources.lthor;
             alive = true;
             dir = direction.stop;
@@ -42,11 +42,11 @@ namespace baloon_invaders
             dir = d;
             if (dir == direction.left)
             {
-                img = Resources.lthor;
+                img = Resources.thor_left;
             }
             if (dir == direction.right)
             {
-                img = Resources.rthor;
+                img = Resources.thor_right;
             }
         }
 
@@ -54,14 +54,14 @@ namespace baloon_invaders
         {
             if(dir == direction.right)
             {
-                if (center.X < width)
+                if (center.X < width-146)
                 {
                     center = new Point(center.X + 20, center.Y);
                 }
             }
             else if (dir == direction.left)
             {
-                if (center.X > 0)
+                if (center.X > 0+5)
                 {
                     center = new Point(center.X - 20, center.Y);
                 }
