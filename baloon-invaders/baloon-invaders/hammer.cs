@@ -37,5 +37,14 @@ namespace baloon_invaders
             }
             return false;
         }
+
+        public bool Hit(minion m)
+        {
+            if (position.X>=m.Position.X && position.X + 10 <= m.Position.X+90 && position.Y <= m.Position.Y + 90&&position.Y>=m.Position.Y)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

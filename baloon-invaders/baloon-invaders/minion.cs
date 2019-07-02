@@ -24,7 +24,10 @@ namespace baloon_invaders
         }
         public void Draw(Graphics g)
         {
-            g.DrawImage(ImageMinion, Position);
+            if (Alive)
+            {
+                g.DrawImage(ImageMinion, Position);
+            }
         }
         public void Move(Nasoka nasoka)
         {

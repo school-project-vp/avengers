@@ -116,6 +116,17 @@ namespace baloon_invaders
             if (hasHammer)
             {
                 h.Move();
+                for (int i = 0; i < 5; i++)
+                {
+                    for (int j = 0; j < 3; j++)
+                    {
+                        if (Minions[i, j].Alive && h.Hit(Minions[i, j]))
+                        {
+                            Minions[i, j].Alive = false;
+                            hasHammer = false;
+                        }
+                    }
+                }
                 if (h.IsGone())
                 {
                     hasHammer = false;
@@ -172,10 +183,10 @@ namespace baloon_invaders
             {
                 return;
             }
-            if (e.KeyChar== ' ')
+            if (e.KeyChar == ' ')
             {
                 hasHammer = true;
-                h = new hammer(new Point(t.center.X+50,t.center.Y));
+                h = new hammer(new Point(t.center.X + 50, t.center.Y));
             }
             return;
         }
