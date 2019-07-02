@@ -13,6 +13,7 @@ namespace baloon_invaders
 {
     public partial class Form1 : Form
     {
+        public int score { get; set; }
         public thor t { get; set; }
         public bool hasHammer { get; set; }
         public hammer h { get; set; }
@@ -30,6 +31,7 @@ namespace baloon_invaders
             InitializeComponent();
             t = new thor(this.Height, this.Width);
             DoubleBuffered = true;
+            score = 0;
             hasHammer = false;
             timer = new Timer();
             timer.Tick += new EventHandler(timer_Tick);
@@ -124,6 +126,7 @@ namespace baloon_invaders
                         {
                             Minions[i, j].Alive = false;
                             hasHammer = false;
+                            score += 10;
                         }
                     }
                 }
@@ -141,7 +144,7 @@ namespace baloon_invaders
             Bitmap objBitmap = new Bitmap(Resources.background, new Size(this.Width, this.Height));
             e.Graphics.DrawImage(objBitmap, new Point(0, 0));
 
-
+            label1.Text = "Score:" + score.ToString();
             for (int i = 0; i < 5; i++)
             {
                 for (int j = 0; j < 3; j++)
@@ -190,5 +193,6 @@ namespace baloon_invaders
             }
             return;
         }
+
     }
 }
