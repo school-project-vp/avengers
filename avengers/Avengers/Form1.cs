@@ -107,6 +107,7 @@ namespace Avengers
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            updateColumns();
             direction = changeDirection(direction);
 
             for (int i = 0; i < 5; i++)
@@ -158,37 +159,47 @@ namespace Avengers
         {
             int lIndex = getLeftIndex();
             int rIndex = getRightIndex();
+            minion right = null;
+            minion left = null;
+            if (lIndex >= 0 && lIndex < 5 && rIndex >= 0 && rIndex < 5)
+            {
+                right = Minions[rIndex, 0];
+                left = Minions[lIndex, 0];
 
-            minion right = Minions[rIndex, 0];
-            minion left = Minions[lIndex, 0];
-            Direction updatedDirection = direction;
-            if (direction == Direction.RIGHT)
+            }
+            else
             {
-                if (right.Position.X + 20 > this.Width - 140)
+                right = Minions[0, 0];
+                left = Minions[0, 0];
+            }
+                Direction updatedDirection = direction;
+                if (direction == Direction.RIGHT)
                 {
-                    updatedDirection = Direction.LEFT;
+                    if (right.Position.X + 20 > this.Width - 140)
+                    {
+                        updatedDirection = Direction.LEFT;
+                    }
+                    if (direction != updatedDirection)
+                    {
+                        MoveMinionsDown();
+                    }
+                    return updatedDirection;
                 }
-                if (direction != updatedDirection)
+                if (direction == Direction.LEFT)
                 {
-                    MoveMinionsDown();
+                    if (left.Position.X - 20 < 0)
+                    {
+                        updatedDirection = Direction.RIGHT;
+                    }
+                    if (direction != updatedDirection)
+                    {
+                        MoveMinionsDown();
+                    }
+                    return updatedDirection;
                 }
+                //unreachable code
                 return updatedDirection;
             }
-            if (direction == Direction.LEFT)
-            {
-                if (left.Position.X - 20 < 0)
-                {
-                    updatedDirection = Direction.RIGHT;
-                }
-                if (direction != updatedDirection)
-                {
-                    MoveMinionsDown();
-                }
-                return updatedDirection;
-            }
-            //unreachable code
-            return updatedDirection;
-        }
 
         private void timer3_Tick(object sender, EventArgs e)
         {
