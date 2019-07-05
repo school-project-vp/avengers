@@ -32,7 +32,21 @@ namespace baloon_invaders
             }
         }
 
-        public void MoveGauntlets(int limit)
+        public bool Hit(thor t)
+        {
+
+            for (int i = 0; i < gauntlets.Count; i++)
+            {
+                if (gauntlets[i].Hit(t))
+                {
+                    gauntlets[i].delete = true;
+                    return true;
+                }
+            }
+            return false;
+        }
+
+            public void MoveGauntlets(int limit)
         {
             for (int i = 0; i < gauntlets.Count; i++)
             {

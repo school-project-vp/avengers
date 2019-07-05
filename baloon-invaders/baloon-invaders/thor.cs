@@ -49,7 +49,15 @@ namespace baloon_invaders
                 img = Resources.thor_right;
             }
         }
+        public bool Hit(gauntlet g)
+        {
 
+            if (g.Position.X >= center.X && g.Position.X + 80 <= center.X && g.Position.Y + 80 >= center.Y)
+            {
+                return true;
+            }
+            return false;
+        }
 
         public void Move(int width)
         {

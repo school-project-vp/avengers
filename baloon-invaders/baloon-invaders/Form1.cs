@@ -251,23 +251,7 @@ namespace baloon_invaders
             }
             ++generateGauntlet;
             doc.MoveGauntlets(Height);
-            if (lvl == 2)
-            {
-                foreach (gauntlet g in doc.gauntlets)
-                {
-                    if (g.Hit(t))
-                    {
-                        lives--;
-                        redFrame = true;
-                        //AKO LIVES == 0 FRLI EXCEPTION ZA GAME OVER
-                        if (lives < 0)
-                        {
-                            this.DialogResult = DialogResult.Ignore;
-                            this.Close();
-                        }
-                    }
-                }
-            }
+            
             Invalidate(true);
         }
 
@@ -353,6 +337,35 @@ namespace baloon_invaders
         private void timer_Tick(object sender, EventArgs e)
         {
             t.Move(this.Width);
+            if (lvl == 2)
+            {
+                for (int i = 0; i < doc.gauntlets.Count; i++)
+                {
+                    if (t.Hit(doc.gauntlets[i]))
+                    {
+                        doc.gauntlets[i].delete = true;
+                        lives--;
+                        redFrame = true;
+                        if (lives < 0)
+                        {
+                            this.DialogResult = DialogResult.Ignore;
+                            this.Close();
+                        }
+                    }
+                }
+                    //if (doc.Hit(t))
+                    //{
+                    //    lives--;
+                    //    redFrame = true;
+                    //    //AKO LIVES == 0 FRLI EXCEPTION ZA GAME OVER
+                    //    if (lives < 0)
+                    //    {
+                    //        this.DialogResult = DialogResult.Ignore;
+                    //        this.Close();
+                    //    }
+                    //}
+
+                }
             if (hasHammer)
             {
                 h.Move();
@@ -368,6 +381,17 @@ namespace baloon_invaders
                             if (score == 150)
                             {
                                 lvl = 2;
+                                for (int p = 0; i < 5; i++)
+                                {
+                                    for (int r = 0; j < 3; j++)
+                                    {
+                                        bombs = new List<bomb>();
+                                        Minions[p, r].Alive = false;
+                                    }
+                                }
+                                timer1.Stop();
+                                timer2.Stop();
+                                timer3.Stop();
                                 timerThanos.Start();
                                 timerGauntlet.Start();
                             }
@@ -382,6 +406,7 @@ namespace baloon_invaders
             }
             if (lvl == 2 && hasHammer)
             {
+               
                 if (h.hitTanos(thanos))
                 {
                     thanos.health -= 10;
@@ -391,6 +416,7 @@ namespace baloon_invaders
                         thanos.Died = true;
                         timerThanos.Stop();
                         MessageBox.Show("Great job!");
+                        this.DialogResult = DialogResult.Ignore;
                         this.Close();
                     }
                 }
