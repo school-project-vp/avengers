@@ -1,4 +1,4 @@
-﻿namespace baloon_invaders
+﻿namespace Avengers
 {
     partial class Form2
     {
@@ -74,7 +74,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::baloon_invaders.Properties.Resources.thor_right;
+            this.pictureBox1.Image = global::Avengers.Properties.Resources.thor_right;
             this.pictureBox1.Location = new System.Drawing.Point(32, 50);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(113, 129);
@@ -85,7 +85,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::baloon_invaders.Properties.Resources.thanos2;
+            this.pictureBox2.Image = global::Avengers.Properties.Resources.thanos2;
             this.pictureBox2.Location = new System.Drawing.Point(303, 50);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(107, 129);
@@ -97,7 +97,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::baloon_invaders.Properties.Resources.background;
+            this.BackgroundImage = global::Avengers.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(429, 238);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
