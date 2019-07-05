@@ -29,18 +29,22 @@ namespace baloon_invaders
                 g.DrawImage(ImageMinion, Position);
             }
         }
-        public void Move(Nasoka nasoka)
+        public void Move(Direction nasoka, int velocity)
         {
-            if (nasoka == Nasoka.RIGHT)
+            if (nasoka == Direction.RIGHT)
             {
-                Point newPosition = new Point(Position.X + 20, Position.Y);
+                Point newPosition = new Point(Position.X + velocity, Position.Y);
                 Position = newPosition;
             }
             else
             {
-                Point newPosition = new Point(Position.X - 20, Position.Y);
+                Point newPosition = new Point(Position.X - velocity, Position.Y);
                 Position = newPosition;
             }
+        }
+        public void MoveDown()
+        {
+            this.Position = new Point(Position.X, Position.Y + 20);
         }
     }
 }

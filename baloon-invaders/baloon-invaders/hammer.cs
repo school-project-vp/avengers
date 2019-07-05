@@ -26,12 +26,21 @@ namespace baloon_invaders
 
         public void Move()
         {
-            position = new Point(position.X, position.Y - 20);
+            position = new Point(position.X, position.Y - 50);
         }
 
         public bool IsGone()
         {
             if (position.Y + 20 < 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool hitTanos(thanos t)
+        {
+            if (position.X >= t.Position.X && position.X + 10 <= t.Position.X + 103 && position.Y <= t.Position.Y + 124 && position.Y >= t.Position.Y)
             {
                 return true;
             }
