@@ -24,8 +24,8 @@
 ##3. Претставување на проблемот </br>
 ###3.1. Податочни структури </br>
 Во апликацијата се користат следните класи: public class thor, public class minion, public class thanos, public class hammer, public class bombs, public class gauntletDoc. Сите слики кои се користат при имплементацијата на играта се зачувани во Resources фолдерот од самиот Solution. </br>
-####3.1. Левел 1
-Во првиот левел од играта, се користат класите public class thor, public class hammer, public class minions и public class bombs. 
+####3.1. Левел 1 </br>
+Во првиот левел од играта, се користат класите public class thor, public class hammer, public class minions и public class bombs. </br>
 #####3.1.1. Класа за Тор </br>
 ```
 public class thor
@@ -39,7 +39,7 @@ public class minion
 #####3.1.3. Класа за оружјето на Тор (чекан) </br>
 ```
 public class hammer
-``` </br>
+```  
 Оваа класа се користи за да се имплементира чеканот со кој играчот ги убива минионите. При клик на Space се движи нагоре од моменталната позиција на играчот. Се проверува дали еден минион е погоден од чеканот. </br>
 #####3.1.4. Класа за бомби </br>
 ``` 
