@@ -25,7 +25,7 @@ namespace baloon_invaders
 
         public thor(int heught, int witdh)
         {
-            center = new Point((witdh / 2)-80, heught-170);
+            center = new Point((witdh / 2) - 80, heught - 170);
             img = Resources.thor_right;
             //limg = Resources.lthor;
             alive = true;
@@ -34,7 +34,7 @@ namespace baloon_invaders
 
         public void Draw(Graphics g)
         {
-            g.DrawImageUnscaled(img, center);   
+            g.DrawImageUnscaled(img, center);
         }
 
         public void changeDirection(nasoka d)
@@ -52,7 +52,7 @@ namespace baloon_invaders
         public bool Hit(gauntlet g)
         {
 
-            if (g.Position.X >= center.X && g.Position.X + 80 <= center.X && g.Position.Y + 80 >= center.Y)
+            if (g.Position.X >= center.X-80 && g.Position.X + 80 <= center.X + 90+80 && g.Position.Y + 80 >= center.Y)
             {
                 return true;
             }
@@ -61,16 +61,16 @@ namespace baloon_invaders
 
         public void Move(int width)
         {
-            if(dir == nasoka.right)
+            if (dir == nasoka.right)
             {
-                if (center.X < width-146)
+                if (center.X < width - 146)
                 {
                     center = new Point(center.X + 20, center.Y);
                 }
             }
             else if (dir == nasoka.left)
             {
-                if (center.X > 0+5)
+                if (center.X > 0 + 5)
                 {
                     center = new Point(center.X - 20, center.Y);
                 }

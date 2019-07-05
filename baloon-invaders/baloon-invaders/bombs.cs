@@ -34,7 +34,7 @@ namespace baloon_invaders
         }
         public bool Check(Point thorPosition)
         {
-            if (Position.Y >= thorPosition.Y && Position.X >= thorPosition.X && Position.X <= thorPosition.X + 90)
+            if (Position.Y+50 >= thorPosition.Y && Position.Y<=thorPosition.Y +90 && Position.X >= thorPosition.X && Position.X <= thorPosition.X + 90)
             {
                 IsDone = true;
                 return true;
