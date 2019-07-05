@@ -44,9 +44,10 @@
             this.ScoreLabel,
             this.LivesLabel,
             this.ThanosHealth});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 1030);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 587);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1924, 25);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 10, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(1028, 22);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             this.statusStrip1.Paint += new System.Windows.Forms.PaintEventHandler(this.statusStrip1_Paint);
@@ -54,30 +55,31 @@
             // ScoreLabel
             // 
             this.ScoreLabel.Name = "ScoreLabel";
-            this.ScoreLabel.Size = new System.Drawing.Size(151, 20);
+            this.ScoreLabel.Size = new System.Drawing.Size(118, 17);
             this.ScoreLabel.Text = "toolStripStatusLabel1";
             // 
             // LivesLabel
             // 
             this.LivesLabel.Name = "LivesLabel";
-            this.LivesLabel.Size = new System.Drawing.Size(151, 20);
+            this.LivesLabel.Size = new System.Drawing.Size(118, 17);
             this.LivesLabel.Text = "toolStripStatusLabel1";
             // 
             // ThanosHealth
             // 
             this.ThanosHealth.Name = "ThanosHealth";
-            this.ThanosHealth.Size = new System.Drawing.Size(151, 20);
+            this.ThanosHealth.Size = new System.Drawing.Size(118, 17);
             this.ThanosHealth.Text = "toolStripStatusLabel1";
             this.ThanosHealth.Visible = false;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.ClientSize = new System.Drawing.Size(1028, 609);
             this.Controls.Add(this.statusStrip1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Game";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
